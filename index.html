@@ -129,10 +129,13 @@
     <p class="contact-title">Birthday</p>
     
     <script>
-        var currentDate = new Date();
-        var formattedDate = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        document.write('<time datetime="' + currentDate.toISOString().split('T')[0] + '">' + formattedDate + '</time>');
-    </script>
+      var currentDate = new Date();
+      var constantYear = 2003;
+      var formattedDate = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).replace(currentDate.getFullYear(), constantYear);
+      var dateWithConstantYear = new Date(currentDate.setFullYear(constantYear));
+      document.write('<time datetime="' + dateWithConstantYear.toISOString().split('T')[0] + '">' + formattedDate + '</time>');
+  </script>
+  
 </div>
 
 
